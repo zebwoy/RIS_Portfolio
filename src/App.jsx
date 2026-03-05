@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 const FALLBACK_DATA = {
   personal: {
     name: "Riyaz Ibrahim Shaikh",
-    title: "Senior Civil Engineer & Project Manager",
+    title: "Senior Civil Engineer & Project Coordinator",
     tagline: "15+ Years of Engineering Excellence Across the Gulf",
     phone1: "+91 7499145184", phone2: "+91 8779185464",
     email: "riyazibrahim2008@gmail.com", skype: "riyazibrahim2008@gmail.com",
@@ -748,7 +748,7 @@ export default function App() {
       {/* ── FOOTER ─────────────────────────────────────────────── */}
       <footer style={{background:"#060f1c",borderTop:`1px solid ${NL}`,padding:24,textAlign:"center"}}>
         <div style={{fontFamily:"Playfair Display,serif",color:G,fontSize:"1.05rem",marginBottom:5}}>Riyaz Ibrahim Shaikh</div>
-        <div style={{color:"#4a7fa5",fontSize:"0.78rem"}}>Senior Civil Engineer & Project Manager | Gulf Region Specialist</div>
+        <div style={{color:"#4a7fa5",fontSize:"0.78rem"}}>Senior Civil Engineer & Project Coordinator | Gulf Region Specialist</div>
         <div style={{color:"#1e3a5f",fontSize:"0.7rem",marginTop:12}}>© {new Date().getFullYear()} All rights reserved</div>
       </footer>
 

@@ -26,7 +26,7 @@ async function seed() {
   // ── personal_info ─────────────────────────────────────────────
   const personal = {
     name:        "Riyaz Ibrahim Shaikh",
-    title:       "Senior Civil Engineer & Project Manager",
+    title:       "Senior Civil Engineer & Project Coordinator",
     tagline:     "15+ Years of Engineering Excellence Across the Gulf",
     phone1:      "+91 7499145184",
     phone2:      "+91 8779185464",
@@ -70,7 +70,7 @@ async function seed() {
   // ── experience ────────────────────────────────────────────────
   await sql`TRUNCATE experience RESTART IDENTITY`;
   const experience = [
-    { year: "2025 – Present",      company: "Astute Buildcons",   location: "India",        role: "Project Manager",      sort_order: 1,
+    { year: "2025 – Present",      company: "Astute Buildcons",   location: "India",        role: "Project Coordinator",      sort_order: 1,
       description: "Managing construction of Shree Tisai Grand Multistoried 26-Floor Twin Tower at Kalyan East. Overseeing all phases from planning to completion, ensuring adherence to safety, quality, and environmental standards." },
     { year: "2024 – 2025",         company: "VIRJA Group",        location: "India",        role: "Construction Manager", sort_order: 2,
       description: "Construction Manager for Godrej Tower (Godrej Property) at Kalyan-Bhiwandi By-Pass. Applied PMP principles to manage timelines, budgets, and stakeholder coordination." },
@@ -105,7 +105,7 @@ async function seed() {
     { title: "Rabigh Development Project",            category: "Oil & Gas",      client: "Saudi Aramco, KSA",              sort_order: 4, image_url: "", tags: ["ARAMCO","Petrochemical"],
       description: "ARAMCO Rabigh Development — structural detailing, drainage design, and multidisciplinary coordination for petrochemical infrastructure." },
     { title: "Shree Tisai Grand Twin Tower",          category: "High-Rise",      client: "Astute Buildcons, India",        sort_order: 5, image_url: "", tags: ["High-Rise","Project Management"],
-      description: "Project Manager for 26-floor twin tower development at Kalyan East. Full lifecycle management from planning, execution to handover." },
+      description: "Project Coordinator for 26-floor twin tower development at Kalyan East. Full lifecycle management from planning, execution to handover." },
     { title: "Godrej Tower",                          category: "Residential",    client: "Godrej Property / VIRJA Group",  sort_order: 6, image_url: "", tags: ["Residential","Management"],
       description: "Construction Manager for premium Godrej Tower at Kalyan-Bhiwandi By-Pass. Stakeholder management, progress tracking, and quality compliance." },
     { title: "Hospital Projects – SANGH",             category: "Healthcare",     client: "NESMA & Partners, KSA",          sort_order: 7, image_url: "", tags: ["Healthcare","Structural"],
