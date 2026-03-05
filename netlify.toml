@@ -1,0 +1,27 @@
+[build]
+  command   = "npm run build"
+  publish   = "dist"
+  functions = "netlify/functions"
+
+# Local dev: proxy /api/* → Netlify Functions
+[dev]
+  command     = "npm run dev:vite"
+  targetPort  = 5173
+  port        = 8888
+  autoLaunch  = true
+
+# Route all /api/* calls to the matching function
+[[redirects]]
+  from   = "/api/:function"
+  to     = "/.netlify/functions/:function"
+  status = 200
+
+# SPA fallback – send all non-asset routes to React
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
+
+[functions]
+  # Bundle each function with its node_modules (ESM)
+  node_bundler = "esbuild"
