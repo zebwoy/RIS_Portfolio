@@ -22,11 +22,11 @@ export const handler = async (event) => {
     return { statusCode: 405, headers: CORS, body: JSON.stringify({ error: "Method not allowed" }) };
   }
 
-  if (!process.env.NETLIFY_DATABASE_URL && !process.env.DATABASE_URL) {
+  if (!process.env.DATABASE_URL) {
     return { statusCode: 500, headers: CORS, body: JSON.stringify({ error: "DATABASE_URL not configured" }) };
   }
 
-  const sql = neon(process.env.NETLIFY_DATABASE_URL || process.env.DATABASE_URL);
+  const sql = neon(process.env.DATABASE_URL);
 
   try {
     // Run all queries in parallel for performance
