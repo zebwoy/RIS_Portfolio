@@ -458,13 +458,12 @@ export default function App() {
               ))}
             </div>
           </div>
-          {/* PM Training Badge */}
+          {/* PMP Badge */}
           <div className="hide-mobile" style={{position:"absolute",right:"8%",top:"38%",display:"flex",flexDirection:"column",alignItems:"center",gap:8,opacity:.65}}>
-            <div style={{width:90,height:90,borderRadius:"50%",border:`2px solid ${G}`,display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column",gap:2}}>
-              <span style={{color:G,fontSize:"0.75rem",fontFamily:"Playfair Display,serif",fontWeight:900,letterSpacing:1,textTransform:"uppercase"}}>Project</span>
-              <span style={{color:G,fontSize:"0.75rem",fontFamily:"Playfair Display,serif",fontWeight:900,letterSpacing:1,textTransform:"uppercase"}}>Mgmt</span>
+            <div style={{width:80,height:80,borderRadius:"50%",border:`2px solid ${G}`,display:"flex",alignItems:"center",justifyContent:"center"}}>
+              <span style={{color:G,fontSize:"1.4rem",fontFamily:"Playfair Display,serif",fontWeight:900}}>PMP</span>
             </div>
-            <span style={{color:G,fontSize:"0.62rem",letterSpacing:2,textTransform:"uppercase"}}>Trained</span>
+            <span style={{color:G,fontSize:"0.62rem",letterSpacing:2,textTransform:"uppercase"}}>Certified</span>
           </div>
         </div>
       </section>
@@ -476,43 +475,6 @@ export default function App() {
             <div>
               <h2 className="section-title">About <span>Me</span></h2>
               <div className="gold-line"/>
-              {/* Portrait photo */}
-              <div style={{marginBottom:24}}>
-                {p.photoUrl ? (
-                  <div style={{position:"relative",borderRadius:12,overflow:"hidden",border:`2px solid ${G}30`}}>
-                    <img src={p.photoUrl} alt="Riyaz Ibrahim Shaikh"
-                      style={{width:"100%",aspectRatio:"3/4",objectFit:"cover",objectPosition:"top",display:"block"}}/>
-                    <div style={{position:"absolute",bottom:0,left:0,right:0,height:60,background:`linear-gradient(transparent,${NM})`}}/>
-                    {editMode&&(
-                      <label style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",
-                        background:"rgba(0,0,0,0.55)",cursor:"pointer",opacity:0,transition:"opacity .2s"}}
-                        onMouseEnter={e=>e.currentTarget.style.opacity=1}
-                        onMouseLeave={e=>e.currentTarget.style.opacity=0}>
-                        <div style={{textAlign:"center",color:G}}>
-                          <Icon name="upload" size={28}/><div style={{fontSize:"0.78rem",marginTop:6,fontWeight:700}}>Change Photo</div>
-                        </div>
-                        <input type="file" accept="image/*" style={{display:"none"}} onChange={e=>{
-                          const file=e.target.files[0];
-                          if(file){const r=new FileReader();r.onload=ev=>savePersonal("photoUrl")(ev.target.result);r.readAsDataURL(file);}
-                        }}/>
-                      </label>
-                    )}
-                  </div>
-                ) : (
-                  <label style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",
-                    aspectRatio:"3/4",border:`2px dashed ${editMode?G:NL}`,borderRadius:12,
-                    background:`${NL}30`,cursor:editMode?"pointer":"default",gap:10}}>
-                    <Icon name="passport" size={40} style={{color:editMode?G:"#2a4a6a"}}/>
-                    <span style={{color:editMode?G:"#2a4a6a",fontSize:"0.8rem",fontWeight:600,textAlign:"center",padding:"0 16px"}}>
-                      {editMode?"Click to upload portrait":"No photo yet"}
-                    </span>
-                    {editMode&&<input type="file" accept="image/*" style={{display:"none"}} onChange={e=>{
-                      const file=e.target.files[0];
-                      if(file){const r=new FileReader();r.onload=ev=>savePersonal("photoUrl")(ev.target.result);r.readAsDataURL(file);}
-                    }}/>}
-                  </label>
-                )}
-              </div>
               <div style={{display:"flex",flexDirection:"column",gap:16}}>
                 {[
                   {icon:"phone",  label:"Phone",    val:`${p.phone1||""} / ${p.phone2||""}`},
@@ -786,7 +748,7 @@ export default function App() {
       {/* ── FOOTER ─────────────────────────────────────────────── */}
       <footer style={{background:"#060f1c",borderTop:`1px solid ${NL}`,padding:24,textAlign:"center"}}>
         <div style={{fontFamily:"Playfair Display,serif",color:G,fontSize:"1.05rem",marginBottom:5}}>Riyaz Ibrahim Shaikh</div>
-        <div style={{color:"#4a7fa5",fontSize:"0.78rem"}}>Senior Civil Engineer & Project Manager | Gulf Region Specialist</div>
+        <div style={{color:"#4a7fa5",fontSize:"0.78rem"}}>Senior Civil Engineer & Project Coordinator | Gulf Region Specialist</div>
         <div style={{color:"#1e3a5f",fontSize:"0.7rem",marginTop:12}}>© {new Date().getFullYear()} All rights reserved</div>
       </footer>
 
