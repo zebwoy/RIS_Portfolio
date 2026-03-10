@@ -31,7 +31,10 @@ export const handler = async (event) => {
 
   const { name, email, company, subject, message } = body;
 
+  console.log("[contact] Received:", { name, email, company, subject, messageLen: message?.length });
+
   if (!name?.trim() || !email?.trim() || !message?.trim()) {
+    console.log("[contact] Validation failed — missing fields", { name: !!name?.trim(), email: !!email?.trim(), message: !!message?.trim() });
     return {
       statusCode: 400,
       headers: CORS,
@@ -40,6 +43,7 @@ export const handler = async (event) => {
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    console.log("[contact] Validation failed — bad email format:", email);
     return {
       statusCode: 400,
       headers: CORS,
@@ -48,13 +52,15 @@ export const handler = async (event) => {
   }
 
   if (!process.env.RESEND_API_KEY) {
-    console.error("[contact] RESEND_API_KEY not set");
+    console.error("[contact] RESEND_API_KEY not set — check Netlify env vars");
     return {
       statusCode: 500,
       headers: CORS,
       body: JSON.stringify({ error: "Email service not configured" }),
     };
   }
+
+  console.log("[contact] API key present, calling Resend...");
 
   // ── Build styled HTML email ────────────────────────────────────
   const html = `<!DOCTYPE html>
