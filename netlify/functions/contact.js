@@ -158,7 +158,8 @@ export const handler = async (event) => {
     console.log("[contact] Calling Resend API...");
     const result = await callResend(apiKey, {
       from:     "RIS Portfolio <onboarding@resend.dev>",
-      to:       ["riyazibrahim2008@gmail.com"],
+      // to:       ["riyazibrahim2008@gmail.com"],
+      to:       ["imanriyaj@gmail.com"],
       reply_to: email,
       subject:  subject?.trim()
                   ? `Portfolio Enquiry: ${subject}`
