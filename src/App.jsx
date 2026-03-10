@@ -772,7 +772,7 @@ export default function App() {
               ))}
               <div style={{padding:18,background:`${G}10`,border:`1px solid ${G}30`,borderRadius:10,marginTop:8}}>
                 <div style={{color:G,fontSize:"0.7rem",letterSpacing:1.5,textTransform:"uppercase",marginBottom:5}}>Driving License</div>
-                <div style={{color:"#e8e8e8",fontSize:"0.9rem"}}>Saudi Arabia ✦ India (Both valid)</div>
+                <div style={{color:"#e8e8e8",fontSize:"0.9rem"}}>Saudi Arabia + India (Both valid)</div>
               </div>
             </div>
             <div className="card" style={{padding:30}}>
@@ -786,7 +786,7 @@ export default function App() {
       {/* ── FOOTER ─────────────────────────────────────────────── */}
       <footer style={{background:"#060f1c",borderTop:`1px solid ${NL}`,padding:24,textAlign:"center"}}>
         <div style={{fontFamily:"Playfair Display,serif",color:G,fontSize:"1.05rem",marginBottom:5}}>Riyaz Ibrahim Shaikh</div>
-        <div style={{color:"#4a7fa5",fontSize:"0.78rem"}}>Senior Civil Engineer & Project Manager | Gulf Region Specialist</div>
+        <div style={{color:"#4a7fa5",fontSize:"0.78rem"}}>Senior Civil Engineer & Project Coordinator | Gulf Region Specialist</div>
         <div style={{color:"#1e3a5f",fontSize:"0.7rem",marginTop:12}}>© {new Date().getFullYear()} All rights reserved</div>
       </footer>
 
