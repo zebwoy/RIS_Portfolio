@@ -118,8 +118,7 @@ export const handler = async (event) => {
       },
       body: JSON.stringify({
         from:     "RIS Portfolio <onboarding@resend.dev>",
-        // to:       ["riyazibrahim2008@gmail.com"],
-        to:       ["imanriyaj@gmail.com"],
+        to:       ["riyazibrahim2008@gmail.com"],
         reply_to: email,          // clicking Reply in Gmail goes to the enquirer directly
         subject:  subject?.trim()
                     ? `Portfolio Enquiry: ${subject}`
