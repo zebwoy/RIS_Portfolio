@@ -11,10 +11,12 @@
   autoLaunch  = true
 
 # Route all /api/* calls to the matching function
+# force = true preserves the original HTTP method (POST stays POST)
 [[redirects]]
   from   = "/api/:function"
   to     = "/.netlify/functions/:function"
   status = 200
+  force  = true
 
 # SPA fallback – send all non-asset routes to React
 [[redirects]]
