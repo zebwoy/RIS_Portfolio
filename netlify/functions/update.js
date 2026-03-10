@@ -237,12 +237,13 @@ export const handler = async (event) => {
     // DELETE
     // ═══════════════════════════════════════════════════════════
     else if (action === "delete") {
-      if (!id) return { statusCode: 400, headers: CORS, body: JSON.stringify({ error: "id required for delete" }) };
-
       if (table === "standards") {
-        // Standards are deleted by name, not id
-        await sql`DELETE FROM standards WHERE name = ${data?.name ?? ""}`;
+        // Standards deleted by name, not id
+        if (!data?.name) return { statusCode: 400, headers: CORS, body: JSON.stringify({ error: "name required for standards delete" }) };
+        await sql`DELETE FROM standards WHERE name = ${data.name}`;
       } else {
+        // All other tables delete by id
+        if (!id) return { statusCode: 400, headers: CORS, body: JSON.stringify({ error: "id required for delete" }) };
         await sql`DELETE FROM ${sql(table)} WHERE id = ${id}`;
       }
       result = { ok: true };
